@@ -23,6 +23,15 @@
     
     <body>
         <!-- Header -->
+    
+        
+        
+        <div style="width:100%; height: 45px; background-color: #212528; position: fixed; z-index: 4;">
+            <a style="float: right; margin-right: 10px; font-weight: bold;" href="login.php"> | Login</a>
+            
+             <a style="float: right; margin-right: 10px; font-weight: bold;" href="cadastro.php">Cadastro</a>
+            
+        </div>
         <div id="header" class="skel-layers-fixed">
 
             <div class="top">

@@ -48,12 +48,11 @@
   <body>
     <div class="container">
       <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Bem vindo.</h2>
         <input type="text" class="form-control" placeholder="Login" required autofocus>
         <input type="password" class="form-control" placeholder="Senha" required>
-        <button class="btn" type="submit">Entrar</button>
-         <h3 class="form-signin-heading">Não tem conta?</h2>
+         <input type="password" class="form-control" placeholder="E-mail" required>
         <button class="btn" type="submit">Cadastrar</button>
+       
       </form>
     </div> <!-- /container -->
 
