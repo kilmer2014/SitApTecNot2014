@@ -6,19 +6,19 @@
         <meta name="description" content="" />
         <meta name="keywords" content="" />
 
-        <link rel="stylesheet" href="<?php echo base_url();?>Resources/css/skel.css" />
-        <link rel="stylesheet" href="<?php echo base_url();?>Resources/css/style.css" />
-        <link rel="stylesheet" href="<?php echo base_url();?>Resources/css/style-wide.css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>Resources/css/skel.css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>Resources/css/style.css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>Resources/css/style-wide.css" />
 
-<!--[if lte IE 8]><script src="<?php echo base_url();?>Resources/css/ie/html5shiv.js"></script><![endif]-->
-        <script src="<?php echo base_url();?>Resources/js/jquery.min.js"></script>
-        <script src="<?php echo base_url();?>Resources/js/jquery.scrolly.min.js"></script>
-        <script src="<?php echo base_url();?>Resources/js/jquery.scrollzer.min.js"></script>
-        <script src="<?php echo base_url();?>Resources/js/skel.min.js"></script>
-        <script src="<?php echo base_url();?>Resources/js/skel-layers.min.js"></script>
-        <script src="<?php echo base_url();?>Resources/js/init.js"></script>
-        <!--[if lte IE 9]><link rel="stylesheet" href="<?php echo base_url();?>Resources/css/ie/v9.css" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="<?php echo base_url();?>Resources/css/ie/v8.css" /><![endif]-->
+<!--[if lte IE 8]><script src="<?php echo base_url(); ?>Resources/css/ie/html5shiv.js"></script><![endif]-->
+        <script src="<?php echo base_url(); ?>Resources/js/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>Resources/js/jquery.scrolly.min.js"></script>
+        <script src="<?php echo base_url(); ?>Resources/js/jquery.scrollzer.min.js"></script>
+        <script src="<?php echo base_url(); ?>Resources/js/skel.min.js"></script>
+        <script src="<?php echo base_url(); ?>Resources/js/skel-layers.min.js"></script>
+        <script src="<?php echo base_url(); ?>Resources/js/init.js"></script>
+        <!--[if lte IE 9]><link rel="stylesheet" href="<?php echo base_url(); ?>Resources/css/ie/v9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="<?php echo base_url(); ?>Resources/css/ie/v8.css" /><![endif]-->
     </head>
 
     <body>
@@ -44,35 +44,33 @@
 
             <div class="top">
                 <!-- Logo -->
-                
+
                 <div id="logo">
-                    <span class="image avatar48"><img src="<?php echo base_url();?>Resources/images/avatar.jpg" alt="" /></span>
+                    <span class="image avatar48"><img src="<?php echo base_url(); ?>Resources/images/avatar.jpg" alt="" /></span>
                     <h1 id="title">Contêxtil Ltda</h1>
                     <p>Situação de aprendizagem</p>
                 </div>
-                
-                <!-- Nav -->
+
                 <nav id="nav">
-                    <!--
-                    
-                            Prologue's nav expects links in one of two formats:
-                            
-                            1. Hash link (scrolls to a different section within the page)
-                            
-                               <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-                            2. Standard link (sends the user to another page/site)
-
-                               <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-                    
-                    -->
                     <ul>
-                        <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
-                        <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Categorias</span></a></li>
-                        <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-                        <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+                        <?php
+                        if (true) //Usuario logado
+                        { 
+                            
+                        } 
+                        else 
+                        {
+                            echo "<li><a href=\"#top\" id=\"top-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-home\">Publicações públicas</span></a></li>";
+                            echo "<li><a href=\"#portfolio\" id=\"portfolio-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-th\">Categorias</span></a></li>";
+                            echo "<li><a href=\"#about\" id=\"about-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-user\">About Me</span></a></li>";
+                            echo "<li><a href=\"#contact\" id=\"contact-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-envelope\"></span></a></li>";
+                        }
+                        ?>
                     </ul>
                 </nav>
+
+                
+
 
             </div>
 
@@ -93,73 +91,88 @@
 
         <!-- Main -->
         <div id="main">
-
-            <!-- Intro -->
+            <style>
+                .divConteudo{}
+                .divFooter{}
+                .pDatas{ float:left; font-size: 12px;}
+                .button
+                {
+                    float:right; 
+                }
+            </style>
             <section id="top" class="one dark cover">
-                <div class="container">
-
-                    <header>
-                        <h2 class="alt">Bem vindo ao <strong>BUMP IDEAS</strong>, uma plataforma <a href="http://html5up.net/license">gratuita</a> para o compartilhamento de conhecimento sobre informática.<br />
-                        </h2>
-                        <p></p>
-                    </header>
-
-                    <footer>
-                        <a href="#portfolio" class="button scrolly">Colabore</a>
-                    </footer>
-
-                </div>
+                    <?php
+                    if (true) { // Usuario logado
+                        foreach ($record as $key):
+                            echo "<article class=\"container\">";
+                            echo " <header><h1>";
+                            echo $key->Titulo;
+                            echo "</h1></header>";
+                            echo "<div class=\"divConteudo\">";
+                            echo"  <p style=\"font-size: 12px; text-align: left;\">";
+                            echo $key->Conteudo;
+                            echo "</p>";
+                            echo"</div>";
+                            echo "<div class=\"divFooter\">";
+                            echo "<p class=\"pDatas\">Publicado:";
+                            echo $key->DataCriacao;
+                            echo "&nbsp;</p>";
+                            if ($key->DataUltimaEdicao != null) {
+                                echo "<p class='pDatas'>Editado: " . $key->DataUltimaEdicao . "</p>";
+                            }
+                            echo" <input type=\"button\" class=\"button\" value=\"Or not  :(\" />";
+                            echo "<input type=\"button\" class=\"button\" value=\"Like  :)\" />";
+                            echo "</div>";
+                            echo "</article>";
+                        endforeach;
+                    }
+                    else 
+                    {
+                        echo "<header style=\"background-color: #212528; position:fixed; z-index:0; \">Faça login para visualizar todas as publicações</header>";
+                        
+                         foreach ($record as $key):
+                            if($key->TipoPrivacidade == 1)
+                            {
+                                echo "<article class=\"container\">";
+                                echo " <header><h1>";
+                                echo $key->Titulo;
+                                echo "</h1></header>";
+                                echo "<div class=\"divConteudo\">";
+                                echo"  <p style=\"font-size: 12px; text-align: left;\">";
+                                echo $key->Conteudo;
+                                echo "</p>";
+                                echo"</div>";
+                                echo "<div class=\"divFooter\">";
+                                echo "<p class=\"pDatas\">Publicado:";
+                                echo $key->DataCriacao;
+                                echo "&nbsp;</p>";
+                                if ($key->DataUltimaEdicao != null) {
+                                    echo "<p class='pDatas'>Editado: " . $key->DataUltimaEdicao . "</p>";
+                                }
+                                echo" <input type=\"button\" class=\"button\" value=\"Or not  :(\" />";
+                                echo "<input type=\"button\" class=\"button\" value=\"Like  :)\" />";
+                                echo "</div>";
+                                echo "</article>";
+                             }
+                        endforeach;
+                        
+                        
+                    }
+                    ?>
             </section>
 
-            <!-- Portfolio -->
-            <section id="portfolio" class="two">
-                <div class="container">
-
-                    <header>
-                        <h2>Categorias...</h2>
-                    </header>
-
-                </div>
-
-            </section>
-
-            <!-- About Me -->
-            <section id="about" class="three">
-                <div class="container">
-
-                    <header>
-                        <h2>About Me</h2>
-                    </header>
-
-                    <a href="#" class="image featured"><img src="<?php echo base_url();?>Resources/images/pic08.jpg" alt="" /></a>
-
-                    <p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus 
-                        ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae 
-                        laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem 
-                        parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper 
-                        dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec 
-                        ornare iaculis.</p>
-
-                </div>
-            </section>
-
-            <!-- Contact -->
             <section id="contact" class="four">
                 <div class="container">
-
                     <header>
-                        <h2>Contact</h2>
+                        <h2>Nova postagem</h2>
                     </header>
-
-                    <p>Elementum sem parturient nulla quam placerat viverra 
-                        mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia 
-                        donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
-                        orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
 
                     <form method="post" action="#">
                         <div class="row half">
-                            <div class="6u"><input type="text" name="name" placeholder="Name" /></div>
-                            <div class="6u"><input type="text" name="email" placeholder="Email" /></div>
+                            <div class="6u"><input type="text" name="Titulo" placeholder="Título" /></div>
+                            <select class="6u">
+                                <option>oi</option>
+                            </select>
                         </div>
                         <div class="row half">
                             <div class="12u">
