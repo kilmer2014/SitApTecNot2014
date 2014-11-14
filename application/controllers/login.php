@@ -1,65 +1,47 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class login extends CI_Controller {
 
-	function __construct() {
+    function __construct() {
         parent::__construct();
-        $this->load->model('usuarioModel');
     }
-	
-	public function index()
-	{
-            $this->load->view('login');
-	}
 
-	/*public function retrieve()
-	{	
-		$data['record'] =  $this->usuarioModel->retrieve();
-		$this->load->view('v_tampil.php',$data);
-	}
+    function index() {
 
-	public function form_insert()
-	{
-		$this->load->view('v_insert');
-        }*/
+        // VALIDATION RULES
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('login', 'login', 'required');
+        $this->form_validation->set_rules('senha', 'senha', 'required');
+       
+        $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
 
-	public function create()
-	{
-		$data = array(
-                    'Login' => $_POST['Login'],
-                    'Senha' => $this->input->post('Senha'),
-                    'Email' => $this->input->post('Email')
-                             );
-		$this->usuarioModel->create($data);
-                redirect(base_url());
-	}
 
-	/*public function form_edit()
-	{
-		$data['record']=$this->usuarioModel->getid();
-		// $this->uri->segment(3);
-		$this->load->view('v_edit',$data);
-	}
+        // MODELO MEMBERSHIP
+        $this->load->model('usuarioModel', 'usuarioModel');
+        $query = $this->usuarioModel->valida();
+        
+        if ($this->form_validation->run() == FALSE) 
+        {
+            $this->load->view('login_view');
+        }
+        else
+        {
+            if ($query) 
+            {
+                $data = array('login' => $this->input->post('login'),'logged' => true);
+                $this->session->set_userdata($data);
+                redirect('area');
+            } 
+            else 
+            {
+                $this->load->view('login_view');
+                echo "Usuário ou senha inválidos.";
+                form_error('login');
+            }
+        }
+    }
 
-	public function update()
-	{
-		$data = array(
-					   'Login' => $this->input->post('Login'),
-					   'Senha' => $this->input->post('Senha'),
-					   'Email' => $this->input->post('Email')
-					   
-					);
-		$this->usuarioModel->update($data);
-		redirect('welcome/retrieve');
-	}
-
-	public function delete()
-	{
-		$this->usuarioModel->delete();
-		redirect('welcome/retrieve');
-	}*/
 }
-
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
