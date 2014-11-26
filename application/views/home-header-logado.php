@@ -74,7 +74,7 @@
                         <li><a href="<?php echo base_url() . "home#top"; ?>" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Início</span></a></li>
                         <li><a href="<?php echo base_url() . "home#topm"; ?>" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Publicações</span></a></li>
                           <li><a href="<?php echo base_url() . "publicacao#topm"; ?>" id="cadastro-link" class="skel-layers-ignoreHref"><span class="icon fa-folder">Minhas publicações</span></a></li>
-                        <li><a href="#publicar" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-edit">Publicar</span></a></li>
+                        <li><a href="<?php echo base_url() . "publicacao#publicar"; ?>" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-edit">Publicar</span></a></li>
                         <li><a href="<?php echo base_url() . "perfil"; ?>" id="cadastro-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Perfil</span></a></li>
                         <li><a href="<?php echo base_url() . "logoff"; ?>" id="cadastro-link" class="skel-layers-ignoreHref"><span class="icon fa-mail-reply">Sair</span></a></li>
                       
