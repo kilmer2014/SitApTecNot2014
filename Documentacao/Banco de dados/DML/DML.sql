@@ -6,13 +6,10 @@ INSERT INTO Usuario VALUES (3,'marcelo','rubens','marcelo@gmail.com','Marcelo','
 INSERT INTO Usuario VALUES (4,'carol','pozi','carol@gmail.com','Carol','Pozi','Sussi',null,1,0,1,null);
 INSERT INTO Usuario VALUES (5,'luzia','man�','luzia@gmail.com','Luzia','Man�','Sussi',null,1,1,1,null);
 
-
 #CATEGORIAS
 
 INSERT INTO Categoria VALUES (1,'Hardware','Artigos sobre hardware');
 INSERT INTO Categoria VALUES (2,'Software','Artigos sobre software');
-
-
 
 #PUBLICACOES FANTASIA
 
