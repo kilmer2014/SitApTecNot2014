@@ -1,10 +1,10 @@
 #USUARIOS DO SISTEMA
 use SitApren;
-INSERT INTO Usuario VALUES (1,'kilmer','kilmer','kilmerrodriguezdasilva@gmail.com','Kilmer','Rodriguez','Sussi',null,0,0,1);
-INSERT INTO Usuario VALUES (2,'roberto','felipe','roberto@gmail.com','Roberto','Felipe','Sussi',null,0,1,1);
-INSERT INTO Usuario VALUES (3,'marcelo','rubens','marcelo@gmail.com','Marcelo','Rubens','Sussi',null,0,0,1);
-INSERT INTO Usuario VALUES (4,'carol','pozi','carol@gmail.com','Carol','Pozi','Sussi',null,1,0,1);
-INSERT INTO Usuario VALUES (5,'luzia','man�','luzia@gmail.com','Luzia','Man�','Sussi',null,1,1,1);
+INSERT INTO Usuario VALUES (1,'kilmer','kilmer','kilmerrodriguezdasilva@gmail.com','Kilmer','Rodriguez','Sussi',null,0,0,1,null);
+INSERT INTO Usuario VALUES (2,'roberto','felipe','roberto@gmail.com','Roberto','Felipe','Sussi',null,0,1,1,null);
+INSERT INTO Usuario VALUES (3,'marcelo','rubens','marcelo@gmail.com','Marcelo','Rubens','Sussi',null,0,0,1,null);
+INSERT INTO Usuario VALUES (4,'carol','pozi','carol@gmail.com','Carol','Pozi','Sussi',null,1,0,1,null);
+INSERT INTO Usuario VALUES (5,'luzia','man�','luzia@gmail.com','Luzia','Man�','Sussi',null,1,1,1,null);
 
 
 #CATEGORIAS
