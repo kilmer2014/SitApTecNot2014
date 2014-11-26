@@ -23,6 +23,7 @@ CREATE  TABLE IF NOT EXISTS `SitApren`.`Usuario` (
   `Sexo` TINYINT NULL ,
   `Relacionamento` TINYINT NULL ,
   `SeAtivo` TINYINT NULL ,
+  `DataNascimento` DATETIME NULL,
   PRIMARY KEY (`ID`) )
 ENGINE = InnoDB;
 
